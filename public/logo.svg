@@ -1,0 +1,64 @@
+
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1B121C" />
+      <stop offset="50%" stop-color="#0E0A12" />
+      <stop offset="100%" stop-color="#070509" />
+    </radialGradient>
+
+    <!-- Neon Crimson Blade Gradient -->
+    <linearGradient id="bladeLeft" x1="120" y1="420" x2="256" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A50014" />
+      <stop offset="40%" stop-color="#FF1A2A" />
+      <stop offset="100%" stop-color="#FF5263" />
+    </linearGradient>
+
+    <linearGradient id="bladeRight" x1="392" y1="420" x2="256" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6B000C" />
+      <stop offset="50%" stop-color="#DE0C1C" />
+      <stop offset="100%" stop-color="#FFA033" />
+    </linearGradient>
+
+    <!-- Inner Core Play Gradient -->
+    <linearGradient id="playGrad" x1="210" y1="210" x2="310" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#FFF0F2" />
+      <stop offset="100%" stop-color="#FFBAC1" />
+    </linearGradient>
+
+    <!-- Crimson Outer Glow -->
+    <filter id="crimsonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Container -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#321D28" stroke-width="4" filter="url(#softShadow)" />
+  <rect x="26" y="26" width="460" height="460" rx="106" fill="none" stroke="rgba(255, 30, 45, 0.2)" stroke-width="1.5" />
+
+  <!-- Ambient Glow Behind Logo -->
+  <circle cx="256" cy="256" r="140" fill="#FF1E27" opacity="0.18" filter="url(#crimsonGlow)" />
+
+  <!-- Main 'A' Blade Left Wing -->
+  <path d="M256 86 L118 396 C114 405 122 416 132 416 L196 416 C204 416 211 411 214 404 L256 298 L298 404 C301 411 308 416 316 416 L380 416 C390 416 398 405 394 396 L256 86 Z" fill="url(#bladeLeft)" />
+
+  <!-- Right Wing Shading Overlay -->
+  <path d="M256 86 L394 396 C398 405 390 416 380 416 L316 416 C308 416 301 411 298 404 L256 298 V86 Z" fill="url(#bladeRight)" />
+
+  <!-- High-Tech Central Chevron / Play Core -->
+  <polygon points="232,210 310,256 232,302" fill="url(#playGrad)" filter="url(#crimsonGlow)" />
+
+  <!-- Cybernetic Crosshair Accents -->
+  <line x1="80" y1="256" x2="110" y2="256" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+  <line x1="402" y1="256" x2="432" y2="256" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Top Laser Indicator -->
+  <circle cx="256" cy="64" r="3.5" fill="#FF2638" filter="url(#crimsonGlow)" />
+</svg>

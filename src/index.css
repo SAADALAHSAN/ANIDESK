@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary: #FF1E27;
+    --primary-hover: #E01019;
+    --glow-color: rgba(255, 30, 39, 0.45);
+  }
+
+  .theme-crimson {
+    --primary: #FF1E27;
+    --primary-hover: #E01019;
+    --glow-color: rgba(255, 30, 39, 0.45);
+  }
+
+  .theme-cyan {
+    --primary: #00F0FF;
+    --primary-hover: #00D0DF;
+    --glow-color: rgba(0, 240, 255, 0.45);
+  }
+
+  .theme-purple {
+    --primary: #A855F7;
+    --primary-hover: #9333EA;
+    --glow-color: rgba(168, 85, 247, 0.45);
+  }
+
+  .theme-emerald {
+    --primary: #10B981;
+    --primary-hover: #059669;
+    --glow-color: rgba(16, 185, 129, 0.45);
+  }
+
+  .theme-amber {
+    --primary: #F59E0B;
+    --primary-hover: #D97706;
+    --glow-color: rgba(245, 158, 11, 0.45);
+  }
+
+  .theme-sakura {
+    --primary: #EC4899;
+    --primary-hover: #DB2777;
+    --glow-color: rgba(236, 72, 153, 0.45);
+  }
+
+  /* AnimeTV Wallpaper Background Presets (Fixes "app is bit too dark") */
+  .wallpaper-wallpaper1 {
+    background: radial-gradient(circle at 50% 0%, rgba(35, 28, 65, 0.55) 0%, rgba(12, 12, 20, 0.98) 60%),
+                radial-gradient(circle at 100% 100%, rgba(255, 30, 39, 0.1) 0%, transparent 50%),
+                #0C0C14;
+    background-attachment: fixed;
+  }
+
+  .wallpaper-wallpaper2 {
+    background: radial-gradient(circle at 20% 20%, rgba(16, 35, 60, 0.6) 0%, rgba(10, 13, 22, 0.98) 65%),
+                radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+                #0A0D16;
+    background-attachment: fixed;
+  }
+
+  .wallpaper-wallpaper3 {
+    background: radial-gradient(circle at 70% 10%, rgba(60, 22, 48, 0.55) 0%, rgba(15, 11, 20, 0.98) 65%),
+                radial-gradient(circle at 20% 90%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+                #0E0B14;
+    background-attachment: fixed;
+  }
+
+  .wallpaper-wallpaper4 {
+    background: radial-gradient(circle at 30% 0%, rgba(22, 50, 40, 0.55) 0%, rgba(10, 16, 14, 0.98) 65%),
+                radial-gradient(circle at 70% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                #0A100E;
+    background-attachment: fixed;
+  }
+
+  .wallpaper-minimal {
+    background-color: #0A0A0F;
+  }
+
+  /* Font Sizing */
+  .font-size-small { font-size: 13.5px; }
+  .font-size-normal { font-size: 15px; }
+  .font-size-large { font-size: 16.5px; }
+  .font-size-huge { font-size: 18px; }
+
+  /* Transition Speeds */
+  .anim-none * { transition-duration: 0ms !important; }
+  .anim-fast * { transition-duration: 150ms !important; }
+  .anim-normal * { transition-duration: 300ms !important; }
+  .anim-smooth * { transition-duration: 500ms !important; }
+
+  /* Performance UI Mode */
+  .perf-low * { backdrop-filter: none !important; box-shadow: none !important; }
+  .perf-balanced { }
+  .perf-high { }
+
+  /* TV Couch / Scaling Modes */
+  .scale-compact {
+    font-size: 13.5px;
+  }
+  .scale-normal {
+    font-size: 15px;
+  }
+  .scale-tv {
+    font-size: 17.5px;
+  }
+
+  ::selection {
+    background-color: var(--glow-color, rgba(255, 30, 39, 0.4));
+    color: #ffffff;
+  }
+
+  /* Custom sleek dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #08080c;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #232332;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #36364c;
+  }
+}
+
+/* Video Hardware Sharpness & High-DPI Scaling */
+video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Anime Subtitle Styling (Crunchyroll/Netflix Broadcast Standard) */
+video::cue {
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.45rem !important;
+  line-height: 1.4 !important;
+  text-shadow: 
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0px  2px 4px rgba(0,0,0,0.9),
+     0px  0px 10px rgba(0,0,0,0.9) !important;
+}
+
+/* Top-tier native hardware video rendering on Windows */
+video {
+  image-rendering: -webkit-optimize-contrast;
+  background-color: #000000;
+}
+
+/* Video Color & Contrast Adjustments (Clean, subtle, GPU-friendly, NO 3D translateZ blur) */
+.video-enhancer-vivid {
+  filter: contrast(1.05) saturate(1.08);
+}
+
+.video-enhancer-cinema {
+  filter: contrast(1.06) saturate(1.03) brightness(0.98);
+}
+
+.video-enhancer-crisp {
+  filter: contrast(1.04) brightness(1.02);
+}
+
+.video-enhancer-oled {
+  filter: contrast(1.08) saturate(1.10);
+}
+
+.video-enhancer-off {
+  filter: none !important;
+  transform: none !important;
+}
+
+/* Fast Solid Dark Containers for 144Hz Smoothness */
+.card-solid {
+  background-color: #12121A;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-solid:hover {
+  border-color: rgba(255, 30, 39, 0.5);
+}
+
+/* Concentric Double Bezel Container */
+.double-bezel {
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 12px 30px -8px rgba(0, 0, 0, 0.85);
+}
+
+/* Electron titlebar drag regions */
+.app-drag {
+  -webkit-app-region: drag;
+}
+
+.app-no-drag {
+  -webkit-app-region: no-drag;
+}
