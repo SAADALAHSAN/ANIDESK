@@ -1,72 +1,82 @@
-# ANIDESK (Windows x64)
+<div align="center">
 
-> **ANIDESK** is a flagship anime streaming & social desktop client reverse-engineered from the **AniFam Mobile** Android app (`net.anifam.app` v0.1.2). Rebuilt from the ground up with **Electron 34**, **React 19**, **TypeScript**, **Tailwind CSS**, and **HLS.js**.
+# ⚡ ANIDESK
 
----
+### Next-Gen Anime Streaming & Desktop Client for Windows
+[![Release](https://img.shields.io/github/v/release/SAADALAHSAN/ANIDESK?style=for-the-badge&color=10b981&label=Latest%20Version)](https://github.com/SAADALAHSAN/ANIDESK/releases/latest)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20x64-0078d7?style=for-the-badge&logo=windows)](https://github.com/SAADALAHSAN/ANIDESK/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/SAADALAHSAN/ANIDESK/total?style=for-the-badge&color=8b5cf6)](https://github.com/SAADALAHSAN/ANIDESK/releases/latest)
+[![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)](LICENSE)
 
-## ⚡ What's New in ANIDESK v1.0 Pro
+<br/>
 
-### 1. 🎨 Video & Resolution Enhancer Engine (Fixes Dull Colors)
-- **Automatic 1080p Stream Initialization**: Overrides initial blurry 360p adaptive buffering by automatically locking onto the highest available resolution level upon manifest load.
-- **Hardware-Accelerated Post-Processing Shaders**:
-  - **✨ Vivid Anime Mode (Default)**: `contrast(1.10) saturate(1.22) brightness(1.03)` — deep inky blacks, vibrant anime colors, and razor-sharp line art.
-  - **🎬 Cinema HDR Sim**: `contrast(1.15) saturate(1.10) brightness(0.98)` — deep theater contrast.
-  - **🔥 Ultra Crisp**: `contrast(1.08) brightness(1.04) saturate(1.06)` — high-frequency detail clarity.
-  - **⚡ OLED Boost**: `contrast(1.18) saturate(1.28) brightness(1.01)` — extreme saturation.
-  - **⚪ Original**: Raw unenhanced stream.
-- **Instant Hotkey**: Press <kbd>E</kbd> in the player to cycle through visual enhancer modes with on-screen HUD toast.
+### 📥 [DOWNLOAD FOR WINDOWS (CLICK HERE)]
 
-### 2. 🎮 Interactive Player HUD & Touch/Mouse Gestures
-- **On-Screen Animated HUD**: Floating center pill showing volume percentage (<kbd>↑</kbd>/<kbd>↓</kbd>), seek timestamps (<kbd>←</kbd>/<kbd>→</kbd>), audio tracks, and server changes.
-- **Double-Tap / Double-Click Gestures**:
-  - Double-click **Left 35%**: Seek **-10s** with animated ripple.
-  - Double-click **Right 35%**: Seek **+10s** with animated ripple.
-  - Double-click **Center**: Toggle **Fullscreen**.
-- **Double-Click TitleBar**: Maximize / Restore window anywhere along the header.
-
-### 3. 🎯 Seamless Playback Continuity & Bug Fixes
-- **Timestamp Preservation**: Switching between Sub & Dub or changing stream servers retains your exact second position without restarting the episode.
-- **Intelligent Skip Intro / Outro**: Single-fire auto-skip protection so you can seek back and re-listen to your favorite anime openings without being forced forward.
-- **Watched Episode History**: Watched episodes display a crisp green checkmark in the episode selector.
-- **Dynamic Resume Button**: Detail pages show `Resume EP X` matching your exact progress instead of always starting at Episode 1.
-- **Debounced Search**: Browse page and `Ctrl + K` search bar feature debouncing to eliminate race conditions and lag.
-- **Recent Searches**: `Ctrl + K` search modal saves recent searches and presents popular anime quick-jump pills.
+| Edition | Type | Direct Download Link | Description |
+| :--- | :--- | :--- | :--- |
+| **Installer (Recommended)** | `.exe` | [**⬇️ Download ANIDESK Setup (v1.2.0)**](https://github.com/SAADALAHSAN/ANIDESK/releases/download/v1.2.0/ANIDESK-Setup-1.2.0.exe) | Standard installer. Creates Desktop shortcut, Start Menu entry, and enables background auto-updates. |
+| **Portable Edition** | `.exe` | [**⬇️ Download Portable Edition (v1.2.0)**](https://github.com/SAADALAHSAN/ANIDESK/releases/download/v1.2.0/ANIDESK-Portable-1.2.0.exe) | Single standalone executable. Run anywhere without installing (great for USB drives). |
 
 ---
 
-## ⌨️ Global Player Keyboard Shortcuts
+</div>
 
-| Shortcut | Action |
-| :--- | :--- |
-| <kbd>Space</kbd> / <kbd>K</kbd> | Play / Pause |
-| <kbd>→</kbd> / <kbd>←</kbd> | Seek forward / backward 10 seconds |
-| <kbd>↑</kbd> / <kbd>↓</kbd> | Volume up / down (with on-screen HUD) |
-| <kbd>M</kbd> | Toggle Mute |
-| <kbd>F</kbd> | Toggle Fullscreen |
-| <kbd>E</kbd> | Cycle Video Color & Resolution Enhancer |
-| <kbd>N</kbd> / <kbd>P</kbd> | Next / Previous Episode |
-| <kbd>Esc</kbd> | Exit Fullscreen / Close Player / Close Modals |
-| <kbd>Ctrl + K</kbd> | Open Instant Search Modal |
+## 🌟 Key Highlights & Engineering Features
+
+### 🎬 1. True 1080p Ultra HD Video Engine (5.5 Mbps)
+* **High-Bitrate CDN Auto-Lock**: Automatically locks onto high-fidelity **5.5 Mbps HLS streams (MovieBox / TikTok CDN)** instead of blurry 1.8 Mbps default mirrors.
+* **Direct GPU Hardware DirectComposition**: Native Chromium DirectComposition overlay bypassing destructive 3D CSS matrix downscaling on Windows display scaling (125%/150%).
+* **Visual Post-Processing Modes**:
+  - `Native Pure (Default)`: 1:1 raw studio output with zero filter overhead.
+  - `Ultra Crisp`: High-pass edge clarity for line art.
+  - `Vivid Anime`: Rich contrast and dynamic color balancing.
+  - `Cinema Mode`: Deep shadow detail.
+  - `OLED Boost`: High-saturation color tuning.
+
+### 🔄 2. Multi-Mirror Zero-Buffer Failover
+* **Proactive Mirror Health Engine**: Probes and health-checks 6+ streaming mirrors in real time.
+* **Smart Auto-Failover**: If a server experiences buffering or network timeouts, the player instantly shifts to backup mirrors without kicking the user out.
+
+### ⚡ 3. Intelligent Playback Experience
+* **Automated Intro/Outro Skip**: Single-fire OP/ED skip protection.
+* **Seamless Audio & Server Switching**: Exact timestamp preservation when toggling between **SUB** and **DUB** tracks or changing streaming servers.
+* **Background HLS Downloader**: Download entire episodes with subtitles in the background for offline viewing.
+
+### 🚀 4. Automated In-App Updates
+* **Silent Update Checker**: Background auto-detection of new releases directly from GitHub.
+* **One-Click Update**: Users receive an instant in-app update prompt whenever a new version is published.
 
 ---
 
-## 🚀 How to Run
+## 🛠️ Tech Stack
 
-### Run Standalone Desktop App
+* **Core Runtime**: [Electron 34](https://www.electronjs.org/)
+* **UI Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **Styling**: [Tailwind CSS v3](https://tailwindcss.com/) + Custom Glassmorphism
+* **Streaming Engine**: [HLS.js](https://github.com/video-dev/hls.js/) + Native DirectComposition
+* **Build Tooling**: [Vite 6](https://vitejs.dev/) + [electron-builder](https://www.electron.build/)
+
+---
+
+## 💻 Local Development Setup
+
 ```bash
-cd E:\anifam-desktop
-npx electron .
+# 1. Clone the repository
+git clone https://github.com/SAADALAHSAN/ANIDESK.git
+cd ANIDESK
+
+# 2. Install dependencies
+npm ci
+
+# 3. Start development server with Electron hot reload
+npm run desktop
+
+# 4. Build and package Windows executables
+npm run pack
 ```
 
-### Run with Hot-Reload Development Server
-```bash
-cd E:\anifam-desktop
-npm run dev
-```
+---
 
-### Build Production Windows Installer (.exe)
-```bash
-cd E:\anifam-desktop
-npm run dist
-```
-Output directory: `E:\anifam-desktop\release/`
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
